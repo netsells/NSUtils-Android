@@ -1,0 +1,10 @@
+update_fastlane
+
+default_platform(:android)
+
+platform :android do
+  desc "Build, test, and lint"
+  lane :build do
+    gradle(task: "build")
+  end
+end
