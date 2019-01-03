@@ -28,13 +28,6 @@ inline fun View.invisible() {
 }
 
 /**
- * DEPRECATED
- * Toggle's view's visibility. If View is visible, then sets to gone. Else sets Visible
- */
-@Deprecated("Use toggleVisibility() instead", ReplaceWith("this.toggleVisibility()", "android.view.View"))
-inline fun View.toggle() = toggleVisibility()
-
-/**
  * Toggle's view's visibility. If View is visible, then sets to gone. Else sets Visible
  * Previously knows as toggle()
  */
