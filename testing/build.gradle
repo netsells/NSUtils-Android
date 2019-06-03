@@ -1,0 +1,72 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 28
+
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled true
+        enabledForTests true
+    }
+
+    android {
+        sourceSets {
+            String sharedTestDir = 'src/sharedTest/java'
+            test {
+                java.srcDir sharedTestDir
+            }
+            androidTest {
+                java.srcDir sharedTestDir
+            }
+        }
+    }
+
+    testOptions {
+        unitTests {
+            includeAndroidResources true
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Dependencies for local unit tests
+    api "junit:junit:$junitVersion"
+    api "org.mockito:mockito-core:$mockitoVersion"
+    api "org.hamcrest:hamcrest-all:$hamcrestVersion"
+    api "androidx.arch.core:core-testing:$archTestingVersion"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion"
+    api "org.robolectric:robolectric:$robolectricVersion"
+    api "androidx.test.espresso:espresso-core:$espressoVersion"
+    api "androidx.test.espresso:espresso-contrib:$espressoVersion"
+    api "androidx.test.espresso:espresso-intents:$espressoVersion"
+    api "com.google.truth:truth:$truthVersion"
+
+    // AndroidX Test - JVM testing
+    api "androidx.test:core-ktx:$androidXTestCoreVersion"
+    api "androidx.test.ext:junit-ktx:$androidXTestExtKotlinRunnerVersion"
+    api "androidx.test:rules:$androidXTestRulesVersion"
+}

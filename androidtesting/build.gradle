@@ -1,0 +1,80 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 28
+
+
+    defaultConfig {
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+    }
+
+    buildTypes {
+        debug {
+            testCoverageEnabled true
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dataBinding {
+        enabled true
+        enabledForTests true
+    }
+
+    android {
+        sourceSets {
+            String sharedTestDir = 'src/sharedTest/java'
+            test {
+                java.srcDir sharedTestDir
+            }
+            androidTest {
+                java.srcDir sharedTestDir
+            }
+        }
+    }
+
+    testOptions {
+        unitTests {
+            includeAndroidResources true
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation "androidx.fragment:fragment-testing:$fragmentVersion"
+
+    // Dependencies for Android unit tests
+    api "junit:junit:$junitVersion"
+    api "org.mockito:mockito-core:$mockitoVersion"
+    api "com.linkedin.dexmaker:dexmaker-mockito:$dexMakerVersion"
+
+    // AndroidX Test - Instrumented testing
+    api "androidx.test:core-ktx:$androidXTestCoreVersion"
+    api "androidx.test.ext:junit-ktx:$androidXTestExtKotlinRunnerVersion"
+    api "androidx.test:rules:$androidXTestRulesVersion"
+    api "androidx.room:room-testing:$roomVersion"
+    api "androidx.arch.core:core-testing:$archTestingVersion"
+    api "androidx.test.espresso:espresso-core:$espressoVersion"
+    api "androidx.test.espresso:espresso-contrib:$espressoVersion"
+    api "androidx.test.espresso:espresso-intents:$espressoVersion"
+    api "androidx.test.espresso.idling:idling-concurrent:$espressoVersion"
+    api "org.robolectric:annotations:$robolectricVersion"
+
+    // Resolve conflicts between main and test APK:
+    api "androidx.annotation:annotation:$androidXAnnotations"
+    api "androidx.legacy:legacy-support-v4:$androidXLegacySupport"
+    api "androidx.recyclerview:recyclerview:$recyclerViewVersion"
+    api "androidx.appcompat:appcompat:$appCompatVersion"
+    api "com.google.android.material:material:$materialVersion"
+}
