@@ -52,6 +52,8 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
+    implementation "androidx.fragment:fragment-testing:$fragmentVersion"
+
     // Dependencies for local unit tests
     api "junit:junit:$junitVersion"
     api "org.mockito:mockito-core:$mockitoVersion"
