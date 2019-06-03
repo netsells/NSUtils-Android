@@ -11,6 +11,10 @@ This module exposes a number of dependencies for testing purposes:
 * Robolectric Annotations
 * Koin Test
 
+## Sample Application
+
+A sample app using these testing libraries can be found at https://github.com/netsells/todo
+
 ## `DataBindingIdlingResource`
 
 Included is a `DataBindingIdlingResource` which can be used for Robolectric simulated tests. Essentially it allows you to wait for data binding to complete before continuing a test:
