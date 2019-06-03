@@ -1,1 +1,1 @@
-include ':nsutils', ':testing', ':androidtesting'
+include ':nsutils', ':testutils', ':androidtestutils'
