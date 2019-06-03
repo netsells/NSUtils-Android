@@ -87,5 +87,7 @@ dependencies {
     api "com.google.android.material:material:$materialVersion"
 
     // Koin Test
-    api 'org.koin:koin-test:2.0.1'
+    api('org.koin:koin-test:2.0.1') {
+        exclude group: 'org.mockito'
+    }
 }
