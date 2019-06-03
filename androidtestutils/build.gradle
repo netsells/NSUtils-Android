@@ -73,6 +73,8 @@ dependencies {
     api "androidx.test:rules:$androidXTestRulesVersion"
     api "androidx.room:room-testing:$roomVersion"
     api "androidx.arch.core:core-testing:$archTestingVersion"
+    api "androidx.test.espresso:espresso-core:$espressoVersion"
+    api "androidx.test.espresso:espresso-contrib:$espressoVersion"
     api "androidx.test.espresso:espresso-intents:$espressoVersion"
     api "androidx.test.espresso.idling:idling-concurrent:$espressoVersion"
     api "org.robolectric:annotations:$robolectricVersion"
@@ -83,12 +85,6 @@ dependencies {
     api "androidx.recyclerview:recyclerview:$recyclerViewVersion"
     api "androidx.appcompat:appcompat:$appCompatVersion"
     api "com.google.android.material:material:$materialVersion"
-
-    // Barista
-    api('com.schibsted.spain:barista:3.0.0') {
-        exclude group: 'com.android.support'
-        exclude group: 'org.jetbrains.kotlin'
-    }
 
     // Koin Test
     api 'org.koin:koin-test:2.0.1'
