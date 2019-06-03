@@ -85,4 +85,7 @@ dependencies {
     api "androidx.recyclerview:recyclerview:$recyclerViewVersion"
     api "androidx.appcompat:appcompat:$appCompatVersion"
     api "com.google.android.material:material:$materialVersion"
+
+    // Koin Test
+    api 'org.koin:koin-test:2.0.1'
 }

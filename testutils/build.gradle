@@ -62,8 +62,6 @@ dependencies {
 
     implementation "androidx.fragment:fragment-testing:$fragmentVersion"
 
-    annotationProcessor 'com.google.auto.service:auto-service:1.0-rc4'
-
     // Dependencies for local unit tests
     api "junit:junit:$junitVersion"
     api "org.mockito:mockito-core:$mockitoVersion"
@@ -71,7 +69,9 @@ dependencies {
     api "androidx.arch.core:core-testing:$archTestingVersion"
     api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
     api "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesVersion"
-    api "org.robolectric:robolectric:$robolectricVersion"
+    api("org.robolectric:robolectric:$robolectricVersion") {
+        exclude group: 'com.google.auto.service', module: 'auto-service'
+    }
     api "androidx.test.espresso:espresso-core:$espressoVersion"
     api "androidx.test.espresso:espresso-contrib:$espressoVersion"
     api "androidx.test.espresso:espresso-intents:$espressoVersion"
@@ -81,4 +81,9 @@ dependencies {
     api "androidx.test:core-ktx:$androidXTestCoreVersion"
     api "androidx.test.ext:junit-ktx:$androidXTestExtKotlinRunnerVersion"
     api "androidx.test:rules:$androidXTestRulesVersion"
+
+    // Koin Test
+    api 'org.koin:koin-test:2.0.1'
+
 }
+
