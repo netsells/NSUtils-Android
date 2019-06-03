@@ -14,3 +14,11 @@ dependencies {
   androidTestImplementation 'com.github.netsells.nsutils-android:androidtestutils:0.4.3'
 }
 ```
+
+## About
+
+NSUtils-Android contains 3 modules:
+
+* `nsutils`, which includes some handy functions for general development
+* [`testutils`](testutils/README.md), which includes all the testing dependencies you could ever need plus a couple of helpers
+* [`androidtestutils`](androidtestutils/README.md), as above but for on-device tests
