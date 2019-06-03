@@ -1,4 +1,7 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 28
@@ -41,6 +44,10 @@ android {
         }
     }
 
+    lintOptions {
+        abortOnError false
+    }
+
     testOptions {
         unitTests {
             includeAndroidResources true
@@ -51,6 +58,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
     implementation "androidx.fragment:fragment-testing:$fragmentVersion"
 
