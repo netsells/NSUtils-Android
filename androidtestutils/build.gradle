@@ -91,6 +91,9 @@ dependencies {
 
     // Barista
     api 'com.schibsted.spain:barista:3.1.0'
+
+    // Mock web server
+    api 'com.squareup.okhttp3:mockwebserver:3.14.2'
 }
 
 spotless {
