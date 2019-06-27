@@ -9,9 +9,9 @@ A collection of commonly used functions for Android projects.
 
 ```groovy
 dependencies {
-  implementation 'com.github.netsells.nsutils-android:nsutils:0.4.3'
-  testImplementation 'com.github.netsells.nsutils-android:testutils:0.4.3'
-  androidTestImplementation 'com.github.netsells.nsutils-android:androidtestutils:0.4.3'
+  implementation 'com.github.netsells.nsutils-android:nsutils:0.5'
+  testImplementation 'com.github.netsells.nsutils-android:testutils:0.5'
+  androidTestImplementation 'com.github.netsells.nsutils-android:androidtestutils:0.5'
 }
 ```
 
