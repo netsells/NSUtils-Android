@@ -5,19 +5,23 @@ apply plugin: 'kotlin-kapt'
 apply plugin: 'com.diffplug.gradle.spotless'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
+
     defaultConfig {
         minSdkVersion 19
-        targetSdkVersion 28
-
+        targetSdkVersion 29
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
     buildToolsVersion '28.0.3'
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     dataBinding.enabled true
+
     lintOptions {
         abortOnError false
     }
@@ -27,28 +31,21 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
-    implementation "androidx.appcompat:appcompat:$appCompatVersion"
+    implementation 'androidx.appcompat:appcompat:1.0.2'
 
     api 'com.github.bumptech.glide:glide:4.9.0'
     kapt 'com.github.bumptech.glide:compiler:4.9.0'
 
-    testImplementation "junit:junit:$junitVersion"
-    testImplementation "androidx.arch.core:core-testing:$archTestingVersion"
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'androidx.arch.core:core-testing:2.0.1'
 
-    api "androidx.fragment:fragment-testing:$fragmentVersion"
-    api "androidx.test:core:$androidXTestCoreVersion"
-    api "androidx.fragment:fragment:$fragmentVersion"
-    api "androidx.test.espresso:espresso-idling-resource:$espressoVersion"
+    api 'androidx.fragment:fragment-testing:1.1.0-beta01'
+    api 'androidx.test:core:1.2.0'
+    api 'androidx.fragment:fragment:1.1.0-beta01'
+    api 'androidx.test.espresso:espresso-idling-resource:3.2.0'
 }
 
 spotless {
-    format 'misc', {
-        target '**/*.gradle', '**/*.md', '**/.gitignore'
-
-        trimTrailingWhitespace()
-        indentWithSpaces()
-        endWithNewline()
-    }
     java {
         googleJavaFormat()
     }

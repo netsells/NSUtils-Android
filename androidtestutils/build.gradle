@@ -2,19 +2,16 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'com.diffplug.gradle.spotless'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
 
 
     defaultConfig {
         minSdkVersion 21
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
-
+        targetSdkVersion 29
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-
     }
 
     buildTypes {
@@ -60,34 +57,47 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
-    implementation "androidx.fragment:fragment-testing:$fragmentVersion"
+    implementation "androidx.fragment:fragment-testing:1.1.0-beta01"
 
     // Dependencies for Android unit tests
-    api "junit:junit:$junitVersion"
-    api "org.mockito:mockito-core:$mockitoVersion"
-    api "com.linkedin.dexmaker:dexmaker-mockito:$dexMakerVersion"
+    api 'junit:junit:4.12'
+    api 'org.mockito:mockito-core:2.28.2'
+    api 'com.linkedin.dexmaker:dexmaker-mockito:2.25.0'
 
     // AndroidX Test - Instrumented testing
-    api "androidx.test:core-ktx:$androidXTestCoreVersion"
-    api "androidx.test.ext:junit-ktx:$androidXTestExtKotlinRunnerVersion"
-    api "androidx.test:rules:$androidXTestRulesVersion"
-    api "androidx.room:room-testing:$roomVersion"
-    api "androidx.arch.core:core-testing:$archTestingVersion"
-    api "androidx.test.espresso:espresso-core:$espressoVersion"
-    api "androidx.test.espresso:espresso-contrib:$espressoVersion"
-    api "androidx.test.espresso:espresso-intents:$espressoVersion"
-    api "androidx.test.espresso.idling:idling-concurrent:$espressoVersion"
-    api "org.robolectric:annotations:$robolectricVersion"
+    api 'androidx.test:core-ktx:1.2.0'
+    api 'androidx.test.ext:junit-ktx:1.1.1'
+    api 'androidx.test:rules:1.2.0'
+    api 'androidx.room:room-testing:2.1.0'
+    api 'androidx.arch.core:core-testing:2.0.1'
+    api 'androidx.test.espresso:espresso-core:3.2.0'
+    api 'androidx.test.espresso:espresso-contrib:3.2.0'
+    api 'androidx.test.espresso:espresso-intents:3.2.0'
+    api 'androidx.test.espresso.idling:idling-concurrent:3.2.0'
+    api 'org.robolectric:annotations:4.3'
+    api 'androidx.work:work-testing:2.1.0-beta02'
 
     // Resolve conflicts between main and test APK:
-    api "androidx.annotation:annotation:$androidXAnnotations"
-    api "androidx.legacy:legacy-support-v4:$androidXLegacySupport"
-    api "androidx.recyclerview:recyclerview:$recyclerViewVersion"
-    api "androidx.appcompat:appcompat:$appCompatVersion"
-    api "com.google.android.material:material:$materialVersion"
+    api 'androidx.annotation:annotation:1.1.0'
+    api 'androidx.legacy:legacy-support-v4:1.0.0'
+    api 'androidx.recyclerview:recyclerview:1.0.0'
+    api 'androidx.appcompat:appcompat:1.0.2'
+    api 'com.google.android.material:material:1.1.0-alpha07'
 
     // Koin Test
     api('org.koin:koin-test:2.0.1') {
         exclude group: 'org.mockito'
+    }
+
+    // Barista
+    api 'com.schibsted.spain:barista:3.1.0'
+}
+
+spotless {
+    java {
+        googleJavaFormat()
+    }
+    kotlin {
+        ktlint()
     }
 }
