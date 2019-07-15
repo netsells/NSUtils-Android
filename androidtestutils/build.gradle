@@ -2,7 +2,6 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
-apply plugin: 'com.diffplug.gradle.spotless'
 
 android {
     compileSdkVersion 29
@@ -55,7 +54,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
-    implementation "androidx.fragment:fragment-testing:1.1.0-beta01"
+    implementation "androidx.fragment:fragment-testing:1.1.0-rc01"
 
     // Dependencies for Android unit tests
     api 'junit:junit:4.12'
@@ -73,7 +72,7 @@ dependencies {
     api 'androidx.test.espresso:espresso-intents:3.2.0'
     api 'androidx.test.espresso.idling:idling-concurrent:3.2.0'
     api 'org.robolectric:annotations:4.3'
-    api 'androidx.work:work-testing:2.1.0-beta02'
+    api 'androidx.work:work-testing:2.1.0'
 
     // Resolve conflicts between main and test APK:
     api 'androidx.annotation:annotation:1.1.0'
@@ -94,11 +93,3 @@ dependencies {
     api 'com.squareup.okhttp3:mockwebserver:3.14.2'
 }
 
-spotless {
-    java {
-        googleJavaFormat()
-    }
-    kotlin {
-        ktlint()
-    }
-}

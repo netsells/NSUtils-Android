@@ -2,7 +2,6 @@ apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
-apply plugin: 'com.diffplug.gradle.spotless'
 
 android {
     compileSdkVersion 29
@@ -39,17 +38,8 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     testImplementation 'androidx.arch.core:core-testing:2.0.1'
 
-    api 'androidx.fragment:fragment-testing:1.1.0-beta01'
+    api 'androidx.fragment:fragment-testing:1.1.0-rc01'
     api 'androidx.test:core:1.2.0'
-    api 'androidx.fragment:fragment:1.1.0-beta01'
+    api 'androidx.fragment:fragment:1.1.0-rc01'
     api 'androidx.test.espresso:espresso-idling-resource:3.2.0'
-}
-
-spotless {
-    java {
-        googleJavaFormat()
-    }
-    kotlin {
-        ktlint()
-    }
 }
