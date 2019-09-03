@@ -54,7 +54,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
-    implementation "androidx.fragment:fragment-testing:1.1.0-rc03"
+    implementation "androidx.fragment:fragment-testing:1.1.0-rc04"
 
     // Dependencies for Android unit tests
     api 'junit:junit:4.12'
@@ -72,7 +72,7 @@ dependencies {
     api 'androidx.test.espresso:espresso-intents:3.2.0'
     api 'androidx.test.espresso.idling:idling-concurrent:3.2.0'
     api 'org.robolectric:annotations:4.3'
-    api 'androidx.work:work-testing:2.1.0'
+    api 'androidx.work:work-testing:2.2.0'
 
     // Resolve conflicts between main and test APK:
     api 'androidx.annotation:annotation:1.1.0'
