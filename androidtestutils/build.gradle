@@ -54,7 +54,7 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
 
-    implementation "androidx.fragment:fragment-testing:1.1.0-rc04"
+    implementation "androidx.fragment:fragment-testing:1.1.0"
 
     // Dependencies for Android unit tests
     api 'junit:junit:4.12'
@@ -66,7 +66,7 @@ dependencies {
     api 'androidx.test.ext:junit-ktx:1.1.1'
     api 'androidx.test:rules:1.2.0'
     api 'androidx.room:room-testing:2.1.0'
-    api 'androidx.arch.core:core-testing:2.0.1'
+    api 'androidx.arch.core:core-testing:2.1.0'
     api 'androidx.test.espresso:espresso-core:3.2.0'
     api 'androidx.test.espresso:espresso-contrib:3.2.0'
     api 'androidx.test.espresso:espresso-intents:3.2.0'
@@ -78,8 +78,8 @@ dependencies {
     api 'androidx.annotation:annotation:1.1.0'
     api 'androidx.legacy:legacy-support-v4:1.0.0'
     api 'androidx.recyclerview:recyclerview:1.0.0'
-    api 'androidx.appcompat:appcompat:1.0.2'
-    api 'com.google.android.material:material:1.1.0-alpha09'
+    api 'androidx.appcompat:appcompat:1.1.0'
+    api 'com.google.android.material:material:1.1.0-alpha10'
 
     // Koin Test
     api('org.koin:koin-test:2.0.1') {
