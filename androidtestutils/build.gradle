@@ -62,7 +62,7 @@ dependencies {
     api 'com.linkedin.dexmaker:dexmaker-mockito:2.25.0'
 
     // AndroidX Test - Instrumented testing
-    api 'androidx.test:core-ktx:1.2.0'
+    api 'androidx.test:core-ktx:1.4.0'
     api 'androidx.test.ext:junit-ktx:1.1.1'
     api 'androidx.test:rules:1.2.0'
     api 'androidx.room:room-testing:2.2.3'
