@@ -12,12 +12,26 @@ buildscript {
 }
 
 allprojects {
-    apply plugin: 'maven-publish'
     group = 'com.github.netsells'
+    version = '0.5.9'
     repositories {
         google()
         jcenter()
         maven { url 'https://jitpack.io' }
+    }
+}
+
+subprojects {
+    apply plugin: 'maven-publish'
+
+    publishing {
+        publications {
+            maven(MavenPublication) {
+                groupId project.group
+                artifactId project.name
+                version project.version
+            }
+        }
     }
 }
 
