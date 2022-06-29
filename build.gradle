@@ -12,6 +12,8 @@ buildscript {
 }
 
 allprojects {
+    apply plugin: 'maven-publish'
+    group = 'com.github.netsells'
     repositories {
         google()
         jcenter()
